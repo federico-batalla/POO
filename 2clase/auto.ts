@@ -20,32 +20,43 @@ class Auto {
     marca:string
     modelo:string;
 
+    constructor(marca:string,modelo:string){
+        this.marca = marca;
+        this.modelo = modelo;
+    }
 
-    prenderApagar() {
+
+    prenderApagar():void {
         if (this.estaPrendido){
             this.estaPrendido = false;
             console.log("se prendio el auto")
 
         }else{
             this.estaPrendido = true;
-            console.log("se apaga el auto")
+            console.log("se apago el auto")
         }
     }
 
-    cargarCombustible(){
+    cargarCombustible():void{
+        if(this.combustibleActual==10){
+            console.log("tanque lleno")
+        }else{
         this.combustibleActual++;
     }
-    verCombustibleActual(){
+    }
+    verCombustibleActual():void{
         console.log("combustible actual"+this.combustibleActual);
     }
 
-    avanzar(){
-        this.combustibleActual--
+    avanzar():void{
+        if(this.combustibleActual>0){
+        this.combustibleActual--;
         console.log("el auto avanzo 10 mt");
+        }else{
+            console.log("debe cargar combustible");
+        }
+    
     }
-
-
-
 
 
 }
