@@ -81,3 +81,5 @@ console.log( "rectangulo 1 es cuadrado? : "+rectangulo1.esCuadrado());
 
 console.log ("rectangulo 2 esta acostado? : "+rectangulo2.estaAcostado());
 console.log ("rcetangulo 1 esta Acostado? :"+rectangulo1.estaAcostado());
+
+
