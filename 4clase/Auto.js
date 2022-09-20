@@ -1,90 +1,66 @@
-class Auto {
-
-    private estaPrendido: boolean;
-    private combustibleActual: number;
-    private marca: string;
-    private modelo: string;
-
-    constructor(marca: string, modelo: string) {
+var Auto = /** @class */ (function () {
+    function Auto(marca, modelo) {
         this.marca = marca;
         this.modelo = modelo;
-        this.estaPrendido = false
-        this.combustibleActual = 10
+        this.estaPrendido = false;
+        this.combustibleActual = 10;
     }
-
-
-    get_marca(): string {
+    Auto.prototype.get_marca = function () {
         return this.marca;
-    }
-
-    set_marca(marca: string) {
+    };
+    Auto.prototype.set_marca = function (marca) {
         this.marca = marca;
-    }
-
-    get_modelo(): string {
+    };
+    Auto.prototype.get_modelo = function () {
         return this.modelo;
-    }
-
-    set_modelo(marca: string): void {
+    };
+    Auto.prototype.set_modelo = function (marca) {
         this.marca = this.modelo;
-    }
-
-    get_combustibleActual(): number {
+    };
+    Auto.prototype.get_combustibleActual = function () {
         return this.combustibleActual;
-    }
-
-    get_estaPrendido(): boolean {
+    };
+    Auto.prototype.get_estaPrendido = function () {
         return this.estaPrendido;
-    }
-
-
-    prenderApagar(): void {
+    };
+    Auto.prototype.prenderApagar = function () {
         if (this.estaPrendido) {
             this.estaPrendido = false;
             console.log("se apago el auto");
-
-        } else {
+        }
+        else {
             this.estaPrendido = true;
             console.log("se prendio el auto");
         }
-    }
-
-    cargarCombustible(): void {
+    };
+    Auto.prototype.cargarCombustible = function () {
         if (this.combustibleActual == 10) {
             console.log("tanque lleno");
-        } else {
-            console.log("se cargo 1 de combustible")
+        }
+        else {
+            console.log("se cargo 1 de combustible");
             this.combustibleActual++;
         }
-    }
-
-
-
-    avanzar(): void {
+    };
+    Auto.prototype.avanzar = function () {
         if (this.combustibleActual > 0) {
             this.combustibleActual--;
             console.log("el auto avanzo 10 mt");
-        } else {
+        }
+        else {
             console.log("debe cargar combustible");
         }
-
-    }
-
-
-}
-
-let miAuto = new Auto("Ford", "falcon");
-
-
+    };
+    return Auto;
+}());
+var miAuto = new Auto("Ford", "falcon");
 console.log("mi auto es un " + miAuto.get_marca() + " " + miAuto.get_modelo());
 miAuto.prenderApagar();
-for (let index = 0; index < 11; index++) {
-
+for (var index = 0; index < 11; index++) {
     miAuto.avanzar();
 }
-
 miAuto.get_combustibleActual;
 miAuto.cargarCombustible();
 miAuto.cargarCombustible();
-console.log("combustible actual "+miAuto.get_combustibleActual());
+console.log("combustible actual " + miAuto.get_combustibleActual());
 miAuto.prenderApagar();
