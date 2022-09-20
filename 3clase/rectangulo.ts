@@ -50,6 +50,14 @@ class Rectangulo {
         }
     }
 
+    public estaAcostado():boolean{
+        if(this.altura > this.base){
+            return false
+        }else{
+            return true
+        }
+    }
+
 }
 
 let rectangulo1 = new Rectangulo(2, 3);
@@ -62,7 +70,14 @@ console.log("area de rectangulo 1: "+rectangulo1.calcularArea());
 console.log("area de rectangulo 2: "+rectangulo2.calcularArea());
 console.log("area de rectangulo 3: "+rectangulo3.calcularArea());
 console.log("area de rectangulo 4: "+rectangulo4.calcularArea());
+
+
 console.log("compara rcetangulo 1 con rectangulo 2 : "+rectangulo1.compararRectangulo(rectangulo2));
 console.log("compara rcetangulo 1 con rectangulo 3 : "+rectangulo1.compararRectangulo(rectangulo3));
 console.log("compara rcetangulo 1 con rectangulo 4 : "+rectangulo1.compararRectangulo(rectangulo4));
 
+console.log( "rcetangulo 4 es cuadrado? : "+rectangulo4.esCuadrado());
+console.log( "rectangulo 1 es cuadrado? : "+rectangulo1.esCuadrado());
+
+console.log ("rectangulo 2 esta acostado? : "+rectangulo2.estaAcostado());
+console.log ("rcetangulo 1 esta Acostado?"+rectangulo1.estaAcostado());
