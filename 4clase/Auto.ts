@@ -1,4 +1,6 @@
-class Auto {
+
+
+export class Auto {
 
     private estaPrendido: boolean;
     private combustibleActual: number;

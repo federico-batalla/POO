@@ -1,3 +1,6 @@
+"use strict";
+exports.__esModule = true;
+exports.Auto = void 0;
 var Auto = /** @class */ (function () {
     function Auto(marca, modelo) {
         this.marca = marca;
@@ -53,6 +56,7 @@ var Auto = /** @class */ (function () {
     };
     return Auto;
 }());
+exports.Auto = Auto;
 var miAuto = new Auto("Ford", "falcon");
 console.log("mi auto es un " + miAuto.get_marca() + " " + miAuto.get_modelo());
 miAuto.prenderApagar();
