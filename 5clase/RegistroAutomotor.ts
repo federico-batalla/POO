@@ -13,27 +13,27 @@ class Automovil {
     }
 
     get_Patente(): string {
-        return this.patente
+        return this.patente;
     }
 
     get_marca(): string {
-        return this.marca
+        return this.marca;
     }
 
     get_modelo(): string {
-        return this.modelo
+        return this.modelo;
     }
 
-    set_Patente(patente:string): void {
-        this.patente = patente
+    set_Patente(patente: string): void {
+        this.patente = patente;
     }
 
-    set_marca(marca:string): void {
-        this.marca = marca
+    set_marca(marca: string): void {
+        this.marca = marca;
     }
 
-    set_modelo(modelo:string): void {
-        this.modelo = modelo
+    set_modelo(modelo: string): void {
+        this.modelo = modelo;
     }
 
 }
@@ -60,12 +60,12 @@ class RegistroAutomotor {
         this.listaDeAutos.push(auto);
     }
 
-    darBaja(patente: string):void {
+    darBaja(patente: string): void {
 
         if (this.existeAuto(patente) > -1) {
-       
-            this.listaDeAutos.splice(this.existeAuto(patente),1);
-            
+
+            this.listaDeAutos.splice(this.existeAuto(patente), 1);
+
         }
 
 
@@ -90,11 +90,11 @@ class RegistroAutomotor {
 
     }
 
-    actualizar(patente:string,patenteNueva:string){
+    actualizar(patente: string, patenteNueva: string) {
         if (this.existeAuto(patente) > -1) {
-       
+
             this.listaDeAutos[this.existeAuto(patente)].set_Patente(patenteNueva);
-            
+
         }
 
 
@@ -104,7 +104,7 @@ class RegistroAutomotor {
 
 }
 
-let movimientoBaja: boolean = false;
+
 
 let logan: Automovil = new Automovil("111ppp", "Renault", "Logan");
 let clio: Automovil = new Automovil("222rrr", "Renault", "Clio");
@@ -124,7 +124,7 @@ console.log("doy de alta al auto sandero");
 registro.darAlta(sandero);
 console.log(registro.get_listaDeAutos());
 console.log("Actualizo la patente 111ppp por 999jjj");
-registro.actualizar("111ppp","999jjj");
+registro.actualizar("111ppp", "999jjj");
 console.log(registro.get_listaDeAutos());
 console.log("doy de baja la patente 222rrr");
 registro.darBaja("222rrr");

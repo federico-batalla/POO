@@ -56,7 +56,6 @@ var RegistroAutomotor = /** @class */ (function () {
     };
     return RegistroAutomotor;
 }());
-var movimientoBaja = false;
 var logan = new Automovil("111ppp", "Renault", "Logan");
 var clio = new Automovil("222rrr", "Renault", "Clio");
 var ecosport = new Automovil("333eee", "Ford", "Ecosport");
