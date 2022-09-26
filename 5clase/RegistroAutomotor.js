@@ -7,6 +7,21 @@ var Automovil = /** @class */ (function () {
     Automovil.prototype.get_Patente = function () {
         return this.patente;
     };
+    Automovil.prototype.get_marca = function () {
+        return this.marca;
+    };
+    Automovil.prototype.get_modelo = function () {
+        return this.modelo;
+    };
+    Automovil.prototype.set_Patente = function (patente) {
+        this.patente = patente;
+    };
+    Automovil.prototype.set_marca = function (marca) {
+        this.marca = marca;
+    };
+    Automovil.prototype.set_modelo = function (modelo) {
+        this.modelo = modelo;
+    };
     return Automovil;
 }());
 var RegistroAutomotor = /** @class */ (function () {
@@ -20,18 +35,24 @@ var RegistroAutomotor = /** @class */ (function () {
     RegistroAutomotor.prototype.darAlta = function (auto) {
         this.listaDeAutos.push(auto);
     };
-    RegistroAutomotor.prototype.darBaja = function (auto) {
-        var baja = false;
+    RegistroAutomotor.prototype.darBaja = function (patente) {
+        if (this.existeAuto(patente) > -1) {
+            this.listaDeAutos.splice(this.existeAuto(patente), 1);
+        }
+    };
+    RegistroAutomotor.prototype.existeAuto = function (patente) {
+        var posicion = -1;
         for (var i = 0; i < this.listaDeAutos.length; i++) {
-            if (this.listaDeAutos[i].get_Patente() === auto.get_Patente()) {
-                this.listaDeAutos.splice(i, 1);
-                baja = true;
-            }
-            else {
-                baja = false;
+            if (this.listaDeAutos[i].get_Patente() === patente) {
+                posicion = i;
             }
         }
-        return baja;
+        return posicion;
+    };
+    RegistroAutomotor.prototype.actualizar = function (patente, patenteNueva) {
+        if (this.existeAuto(patente) > -1) {
+            this.listaDeAutos[this.existeAuto(patente)].set_Patente(patenteNueva);
+        }
     };
     return RegistroAutomotor;
 }());
@@ -42,14 +63,14 @@ var ecosport = new Automovil("333eee", "Ford", "Ecosport");
 var sandero = new Automovil("555ggg", "Renault", "sandero");
 var lista = [logan, clio, ecosport];
 var registro = new RegistroAutomotor(lista);
+console.log("Consulta lista inicial");
 console.log(registro.get_listaDeAutos());
-movimientoBaja = registro.darBaja(clio);
-if (movimientoBaja) {
-    console.log("se dio de baja el vehiculo");
-}
-else {
-    console.log("el vehiculo no se encuentra registrado");
-}
-console.log(registro.get_listaDeAutos());
+console.log("doy de alta al auto sandero");
 registro.darAlta(sandero);
+console.log(registro.get_listaDeAutos());
+console.log("Actualizo la patente 111ppp por 999jjj");
+registro.actualizar("111ppp", "999jjj");
+console.log(registro.get_listaDeAutos());
+console.log("doy de baja la patente 222rrr");
+registro.darBaja("222rrr");
 console.log(registro.get_listaDeAutos());
