@@ -12,7 +12,9 @@ class Automovil {
         
     }
 
-    get_patente
+    get_Patente():string{
+        return this.patente
+    }
 
 }
 
@@ -22,10 +24,29 @@ class Automovil {
 
 
 class RegistroAutomotor {
-    listaDeAutos:Auto[];
+    private listaDeAutos:Automovil[];
 
-    constructor(listaDeAutos:Auto[]){
+    constructor(listaDeAutos:Automovil[]){
         this.listaDeAutos = listaDeAutos;
     }
 
+    darAlta(auto:Automovil){
+        this.listaDeAutos.push(auto);
+    }
+
+    darBaja(auto:Automovil):boolean{
+        let alta = false
+        for (let i = 0; i < this.listaDeAutos.length; i++) {
+            
+            if(this.listaDeAutos[i].get_Patente === auto.get_Patente){
+                this.listaDeAutos.splice(i,1);
+                alta = true;
+            }
+
+        }
+        return alta;
+
+
+        
+    }
 }
