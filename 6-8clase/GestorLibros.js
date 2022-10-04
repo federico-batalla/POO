@@ -8,8 +8,9 @@ var GestorLibros = /** @class */ (function () {
         if (libro != undefined)
             this.libros = libro;
     }
-    GestorLibros.prototype.getLibros = function () {
-        return this.libros;
+    GestorLibros.prototype.getCopyLibros = function () {
+        var copyArray = this.libros.slice();
+        return copyArray;
     };
     GestorLibros.prototype.getIndex = function (titulo) {
         var posicion = -1;
@@ -20,7 +21,7 @@ var GestorLibros = /** @class */ (function () {
         return posicion;
     };
     GestorLibros.prototype.toString = function () {
-        var aux = "";
+        var aux = "============ Libros Disponibles ============ \n\n";
         for (var index = 0; index < this.libros.length; index++) {
             aux += this.libros[index].toString() + "\n\n";
         }

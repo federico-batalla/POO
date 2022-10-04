@@ -12,8 +12,9 @@ export class GestorLibros{
            this.libros = libro;
     }
 
-    getLibros():Libro[]{
-        return this.libros
+    getCopyLibros():Libro[]{
+        let copyArray:Libro[] = this.libros.slice();
+        return copyArray;
     }
           
     
@@ -28,7 +29,7 @@ export class GestorLibros{
     }
 
     toString():string{
-        let aux : string ="" 
+        let aux : string = "============ Libros Disponibles ============ \n\n"
         for (let index = 0; index < this.libros.length; index++) {
             aux += this.libros[index].toString()+"\n\n";
             
@@ -43,7 +44,7 @@ export class GestorLibros{
 
     consultarLibro(titulo:string):boolean{
         if (this.getIndex(titulo) > -1) 
-            return true;
+            return true
         return false ;   
         
     }
