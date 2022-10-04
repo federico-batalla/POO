@@ -9,8 +9,12 @@ export class Libro{
         this.genero = genero;
     }
 
-    public getTitulo():string{
+    getTitulo():string{
         return this.titulo;
+    }
+
+    setTitulo(titulo:string):void{
+        this.titulo = titulo;
     }
 
     toString():string{
