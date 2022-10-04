@@ -9,8 +9,14 @@ export class Libro{
         this.genero = genero;
     }
 
-    toString():string{
-        return this.titulo+" "+this.autor+" "+this.genero
+    public getTitulo():string{
+        return this.titulo;
     }
 
+    toString():string{
+        return this.titulo+" "+this.autor+" "+this.genero;
+    }
+
+
+    
 }
