@@ -11,6 +11,10 @@ export class GestorLibros{
         if (libro != undefined)
            this.libros = libro;
     }
+
+    getLibros():Libro[]{
+        return this.libros
+    }
           
     
 
@@ -21,6 +25,16 @@ export class GestorLibros{
                 posicion = index;   
         }
         return posicion;
+    }
+
+    toString():string{
+        let aux : string ="" 
+        for (let index = 0; index < this.libros.length; index++) {
+            aux += this.libros[index].toString()+"\n\n";
+            
+        }
+
+        return aux;
     }
 
     ingresarLibro(libro:Libro):void{
@@ -36,7 +50,7 @@ export class GestorLibros{
 
     modificarTituloLibro(titulo:string,tituloNuevo:string):void{
         if (this.getIndex(titulo) > -1) 
-            this.libros[this.getIndex(titulo)].setTitulo(tituloNuevo)   
+            this.libros[this.getIndex(titulo)].setTitulo(tituloNuevo);   
         
     }
 
@@ -45,4 +59,8 @@ export class GestorLibros{
             this.libros.splice(this.getIndex(titulo),1)    
         
     }
+
+
+
+
 }

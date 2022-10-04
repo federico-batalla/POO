@@ -18,7 +18,7 @@ export class Libro{
     }
 
     toString():string{
-        return this.titulo+" "+this.autor+" "+this.genero;
+        return "Titulo: "+this.titulo+"\n"+"Autor: "+this.autor+"\n"+"Genero: "+this.genero;
     }
 
 

@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var GestorLibros_1 = require("./GestorLibros");
+var Libro_1 = require("./Libro");
+var gestor = new GestorLibros_1.GestorLibros("Gestor");
+var libro_1 = new Libro_1.Libro("el señor de los anillos 1", "jr tolkien", "fantasia");
+var libro_2 = new Libro_1.Libro("el señor de los anillos 2", "jr tolkien", "fantasia");
+var libro_3 = new Libro_1.Libro("el señor de los anillos 3", "jr tolkien", "fantasia");
+var libro_4 = new Libro_1.Libro("el principito ", "Antoine de Saint-Exupéry", "infantil");
+gestor.ingresarLibro(libro_1);
+gestor.ingresarLibro(libro_2);
+gestor.ingresarLibro(libro_3);
+gestor.ingresarLibro(libro_4);
+console.log(gestor.toString());
