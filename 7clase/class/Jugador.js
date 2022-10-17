@@ -28,6 +28,9 @@ var Jugador = /** @class */ (function (_super) {
     Jugador.prototype.getPosicion = function () {
         return this.posicion;
     };
+    Jugador.prototype.setPosicion = function (posicion) {
+        this.posicion = posicion;
+    };
     Jugador.prototype.getLesion = function () {
         return this.lesion;
     };

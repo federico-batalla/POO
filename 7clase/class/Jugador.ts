@@ -13,6 +13,9 @@ export class Jugador extends Persona{
     getPosicion():string{
         return this.posicion;
     }
+    setPosicion(posicion:string):void{
+        this.posicion = posicion;
+    }
 
     getLesion():boolean{
         return this.lesion;
