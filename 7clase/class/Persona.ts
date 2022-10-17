@@ -1,10 +1,10 @@
-class Persona{
+export class Persona{
     protected nombre:string;
     protected apellido:string;
     protected pasaporte:number;
-    protected fechaNacimiento:Date;
+    protected fechaNacimiento:string;
 
-    constructor(nombre:string,apellido:string,pasaporte:number,fechaNacimiento:Date){
+    constructor(nombre:string,apellido:string,pasaporte:number,fechaNacimiento:string){
         this.nombre = nombre;
         this.apellido = apellido;
         this.pasaporte = pasaporte;
@@ -23,12 +23,9 @@ class Persona{
         return this.pasaporte
     }
 
-    getFechaNacimiento():Date{
+    getFechaNacimiento():string{
         return this.fechaNacimiento
     }
 
-    toString():string{
-        return "Nombre y Apellido: "+this.getNombre+""+this.getApellido+"/n"+"Pasaporte: "+this.getPasaporte+"/n"+"fecha de nacimiento: "+this.getFechaNacimiento;
-    }
-
+   
 }
