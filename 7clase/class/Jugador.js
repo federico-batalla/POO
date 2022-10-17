@@ -38,11 +38,21 @@ var Jugador = /** @class */ (function (_super) {
         return this.getNombre() + " " + this.getApellido() + " entreno en " + this.getPosicion();
     };
     Jugador.prototype.jugarLeve = function () {
-        return this.getNombre() + " " + this.getApellido() + "jugo el partido";
+        if (this.getLesion()) {
+            return this.getNombre() + " " + this.getApellido() + " esta lesionado, aplique un tratamiento con el masajista";
+        }
+        else {
+            return this.getNombre() + " " + this.getApellido() + " jugo el partido";
+        }
     };
     Jugador.prototype.jugarFuerte = function () {
-        this.setLesion(true);
-        return this.getNombre() + " " + this.getApellido() + "jugo el partido y se lesiono";
+        if (this.getLesion()) {
+            return this.getNombre() + " " + this.getApellido() + " esta lesionado, aplique un tratamiento con el masajista";
+        }
+        else {
+            this.setLesion(true);
+            return this.getNombre() + " " + this.getApellido() + " jugo el partido y se lesiono";
+        }
     };
     Jugador.prototype.toString = function () {
         return "==============" + "\n\n" + "Nombre y Apellido: " + this.getNombre() + " " + this.getApellido() + "\n" + "Pasaporte: " + this.getPasaporte() + "\n" + "fecha de nacimiento: " + this.getFechaNacimiento() + "\n" + "Lesion: " + this.getLesion() + "\n" + "Posicion: " + this.getPosicion();

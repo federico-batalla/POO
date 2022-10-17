@@ -27,12 +27,21 @@ export class Jugador extends Persona{
     }
 
     jugarLeve():string{
-        return this.getNombre()+" "+this.getApellido()+"jugo el partido";
+        if(this.getLesion()){
+            return this.getNombre()+" "+this.getApellido()+" esta lesionado, aplique un tratamiento con el masajista"
+        }else{
+
+            return this.getNombre()+" "+this.getApellido()+" jugo el partido";
+        }
+        
     }
     jugarFuerte():string{
-        this.setLesion(true); 
-        return this.getNombre()+" "+this.getApellido()+"jugo el partido y se lesiono"
-
+        if(this.getLesion()){
+            return this.getNombre()+" "+this.getApellido()+" esta lesionado, aplique un tratamiento con el masajista"
+        }else{
+            this.setLesion(true); 
+            return this.getNombre()+" "+this.getApellido()+" jugo el partido y se lesiono"
+        }
     }
 
     toString():string{
