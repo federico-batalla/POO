@@ -20,7 +20,9 @@ var Persona_1 = require("./Persona");
 var Entrenador = /** @class */ (function (_super) {
     __extends(Entrenador, _super);
     function Entrenador(nombre, apellido, pasaporte, fechaNacimiento) {
-        return _super.call(this, nombre, apellido, pasaporte, fechaNacimiento) || this;
+        var _this = _super.call(this, nombre, apellido, pasaporte, fechaNacimiento) || this;
+        _this.cargo = "Entrenador";
+        return _this;
     }
     Entrenador.prototype.darOrden = function (jugador, posicion) {
         jugador.setPosicion(posicion);
@@ -28,6 +30,12 @@ var Entrenador = /** @class */ (function (_super) {
     };
     Entrenador.prototype.darFormacion = function () {
         return "la formacion del equipo es 4-3-1-2";
+    };
+    Entrenador.prototype.getCargo = function () {
+        return this.cargo;
+    };
+    Entrenador.prototype.toString = function () {
+        return "==============" + "\n\n" + "Nombre y Apellido: " + this.getNombre() + " " + this.getApellido() + "\n" + "Pasaporte: " + this.getPasaporte() + "\n" + "fecha de nacimiento: " + this.getFechaNacimiento() + "\n" + "Cargo: " + this.getCargo();
     };
     return Entrenador;
 }(Persona_1.Persona));

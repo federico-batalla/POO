@@ -20,6 +20,9 @@ var Persona = /** @class */ (function () {
     Persona.prototype.getFechaNacimiento = function () {
         return this.fechaNacimiento;
     };
+    Persona.prototype.toString = function () {
+        return "==============" + "\n\n" + "Nombre y Apellido: " + this.getNombre() + " " + this.getApellido() + "\n" + "Pasaporte: " + this.getPasaporte() + "\n" + "fecha de nacimiento: " + this.getFechaNacimiento();
+    };
     return Persona;
 }());
 exports.Persona = Persona;

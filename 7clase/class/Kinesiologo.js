@@ -19,14 +19,20 @@ exports.Kinesiologo = void 0;
 var Persona_1 = require("./Persona");
 var Kinesiologo = /** @class */ (function (_super) {
     __extends(Kinesiologo, _super);
-    function Kinesiologo(nombre, apellido, pasaporte, fechaNacimiento, titulo) {
+    function Kinesiologo(nombre, apellido, pasaporte, fechaNacimiento) {
         var _this = _super.call(this, nombre, apellido, pasaporte, fechaNacimiento) || this;
-        _this.titulo = titulo;
+        _this.cargo = "Kinesiologo";
         return _this;
     }
+    Kinesiologo.prototype.getCargo = function () {
+        return this.cargo;
+    };
     Kinesiologo.prototype.aplicarTratamiento = function (jugador) {
         jugador.setLesion(false);
         return "Se aplico el tratamiento a " + jugador.getNombre() + " " + jugador.getApellido() + " y se recuero de su lesion";
+    };
+    Kinesiologo.prototype.toString = function () {
+        return "==============" + "\n\n" + "Nombre y Apellido: " + this.getNombre() + " " + this.getApellido() + "\n" + "Pasaporte: " + this.getPasaporte() + "\n" + "fecha de nacimiento: " + this.getFechaNacimiento() + "\n" + "Cargo: " + this.getCargo();
     };
     return Kinesiologo;
 }(Persona_1.Persona));

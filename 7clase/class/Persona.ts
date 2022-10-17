@@ -27,5 +27,7 @@ export class Persona{
         return this.fechaNacimiento
     }
 
-   
+    toString():string{
+        return "=============="+"\n\n"+"Nombre y Apellido: "+this.getNombre()+" "+this.getApellido()+"\n"+"Pasaporte: "+this.getPasaporte()+"\n"+"fecha de nacimiento: "+this.getFechaNacimiento();
+    }
 }
