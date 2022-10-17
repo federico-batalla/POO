@@ -2,14 +2,17 @@
 exports.__esModule = true;
 var Entrenador_1 = require("./class/Entrenador");
 var Jugador_1 = require("./class/Jugador");
+var Kinesiologo_1 = require("./class/Kinesiologo");
 var delantero = new Jugador_1.Jugador("Enzo", "Perez", 34334935, "01/01/1989", "Delantero");
 var defensor = new Jugador_1.Jugador("Matias ", "Maidana", 35162369, "04/01/1995", "Defensor");
 var arquero = new Jugador_1.Jugador("Franco", "Armani", 57487229, "01/08/1988", "Arquero");
 var entrenador = new Entrenador_1.Entrenador("Marcelo", "Gallardo", 15236987, "09/10/1975");
+var kinesiologo = new Kinesiologo_1.Kinesiologo("Juan", "Beltran", 16789456, "15/08/1975", "Lic. Kinesiologia");
 console.log(delantero.entrenar());
 console.log(delantero.jugarLeve());
 console.log(defensor.jugarFuerte());
 console.log(defensor.jugarLeve());
+console.log(kinesiologo.aplicarTratamiento(defensor));
 console.log(entrenador.darFormacion());
 console.log(entrenador.darOrden(delantero, "Defensor"));
 console.log(delantero.toString());
