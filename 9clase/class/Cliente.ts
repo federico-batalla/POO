@@ -20,4 +20,19 @@ export class Cliente{
    getDni():number{
     return this.dni;
    }
+
+   setNombre(nombre:string):void{
+    this.nombre = nombre;
+   }
+
+   setApellido(apellido:string):void{
+    this.apellido = apellido;
+   }
+
+   setDni(dni:number):void{
+    this.dni = dni;
+   }
+
+
+
 }
