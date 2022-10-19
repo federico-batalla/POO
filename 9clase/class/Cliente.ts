@@ -33,6 +33,9 @@ export class Cliente{
     this.dni = dni;
    }
 
+   toString():string{
+      return this.getNombre()+" "+ this.getApellido()+" "+this.getDni(); 
+   }
 
 
 }

@@ -1,6 +1,6 @@
 import { Cliente } from "./Cliente";
 
-export abstract class cuenta{
+export abstract class Cuenta{
     protected numeroCuenta:number;
     protected saldo:number;
     protected cliente:Cliente;
@@ -24,15 +24,23 @@ export abstract class cuenta{
         return this.cliente;
     }
 
-    private setNumeroCuenta(numeroCuenta:number):void{
+    protected setNumeroCuenta(numeroCuenta:number):void{
         this.numeroCuenta = numeroCuenta;
     }
 
-    private setSaldo(saldo:number):void{
+    protected setSaldo(saldo:number):void{
         this.saldo = saldo;
     }
 
-    setCliente(nombre:string,apellido:string,dni:number):void{
+    protected tieneSaldoRetirar(monto:number):boolean{
+        if (this.getSaldo() >= monto){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    protected setCliente(nombre:string,apellido:string,dni:number):void{
         this.cliente.setApellido(apellido);
         this.cliente.setNombre(nombre);
         this.cliente.setDni(dni);
@@ -45,6 +53,12 @@ export abstract class cuenta{
         aux = this.getSaldo() + monto;
         this.setSaldo(aux);
 
+    }
+
+    toString():string{
+        return "Cliente: "+this.cliente.toString() +"/n"+
+                "N° de Cuenta: "+this.getNumeroCuenta+"/n"+
+                "Saldo: "+this.getSaldo;
     }
 
     abstract retirar(monto:number):void;
