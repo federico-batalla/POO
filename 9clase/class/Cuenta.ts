@@ -5,7 +5,7 @@ export abstract class cuenta{
     protected saldo:number;
     protected cliente:Cliente;
 
-    constructor(numeroCuenta:number,saldo:number,cliente:Cliente){
+    constructor(cliente:Cliente){
         this.numeroCuenta = cliente.getDni();
         this.saldo = 0;
         this.cliente = cliente;
@@ -19,6 +19,7 @@ export abstract class cuenta{
         return this.saldo;
     }
 
+    
     getcliente():Cliente{
         return this.cliente;
     }
@@ -27,7 +28,7 @@ export abstract class cuenta{
         this.numeroCuenta = numeroCuenta;
     }
 
-    setSaldo(saldo:number):void{
+    private setSaldo(saldo:number):void{
         this.saldo = saldo;
     }
 
@@ -38,6 +39,20 @@ export abstract class cuenta{
         this.setNumeroCuenta(dni);
         
     }
+
+    ingresar(monto:number):void{
+        let aux:number=0;
+        aux = this.getSaldo() + monto;
+        this.setSaldo(aux);
+
+    }
+
+    abstract retirar(monto:number):void;
+
+    abstract actualizarSaldo():void;
+
+    
+
 
 }
 
