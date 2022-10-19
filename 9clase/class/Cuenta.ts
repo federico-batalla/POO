@@ -32,13 +32,7 @@ export abstract class Cuenta{
         this.saldo = saldo;
     }
 
-    protected tieneSaldoRetirar(monto:number):boolean{
-        if (this.getSaldo() >= monto){
-            return true;
-        }else{
-            return false;
-        }
-    }
+    
 
     protected setCliente(nombre:string,apellido:string,dni:number):void{
         this.cliente.setApellido(apellido);
@@ -55,11 +49,8 @@ export abstract class Cuenta{
 
     }
 
-    toString():string{
-        return "Cliente: "+this.cliente.toString() +"/n"+
-                "N° de Cuenta: "+this.getNumeroCuenta+"/n"+
-                "Saldo: "+this.getSaldo;
-    }
+    
+
 
     abstract retirar(monto:number):void;
 

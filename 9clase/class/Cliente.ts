@@ -1,7 +1,7 @@
 export class Cliente{
-   protected nombre:string;
-   protected apellido:string;
-   protected dni:number;
+   private nombre:string;
+   private apellido:string;
+   private dni:number;
 
    constructor(nombre:string,apellido:string,dni:number){
         this.nombre = nombre;
