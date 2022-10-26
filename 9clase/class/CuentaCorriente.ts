@@ -8,11 +8,15 @@ export class CuentaCorriente extends Cuenta{
         
     }
 
-    retirar(monto: number): void {
+    retirar(monto: number):string {
+        if(this.getSaldo() >= monto){
         let aux:number= 0;
         aux = this.getSaldo()-monto;
         this.setSaldo(aux);
-
+        return "se retiro con exito"
+        }else{
+            return "Saldo Insuficiente"
+        }
     }
 
     

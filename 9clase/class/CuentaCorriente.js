@@ -23,9 +23,15 @@ var CuentaCorriente = /** @class */ (function (_super) {
         return _super.call(this, cliente) || this;
     }
     CuentaCorriente.prototype.retirar = function (monto) {
-        var aux = 0;
-        aux = this.getSaldo() - monto;
-        this.setSaldo(aux);
+        if (this.getSaldo() >= monto) {
+            var aux = 0;
+            aux = this.getSaldo() - monto;
+            this.setSaldo(aux);
+            return "se retiro con exito";
+        }
+        else {
+            return "Saldo Insuficiente";
+        }
     };
     CuentaCorriente.prototype.actualizarSaldo = function () {
         var interes = 0;

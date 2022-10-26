@@ -54,7 +54,7 @@ export abstract class Cuenta{
 
     abstract retirar(monto:number):void;
 
-    abstract actualizarSaldo():void;
+    abstract actualizarSaldo(porcentaje?:number):void;
 
     
 

@@ -16,6 +16,10 @@ export class CuentaAhorro extends Cuenta{
         return this.porcentajeInteres;
     }
 
+    private setPorcentajeInteres(porcentaje:number){
+        this.porcentajeInteres = porcentaje;
+    }
+
     
     
     private retiro(monto: number): void {
@@ -34,12 +38,14 @@ export class CuentaAhorro extends Cuenta{
         }
     }
 
-    actualizarSaldo(): void {
+    actualizarSaldo(porcentaje:number): void {
     let aux:number = 0;
     let interes:number =0;
-    interes = (this.getSaldo()*this.getPorcentajeInteres() )/100;
+    interes = (this.getSaldo()*porcentaje )/100;
     aux = this.getSaldo() + interes;
     this.setSaldo(aux);
+    this.setPorcentajeInteres(porcentaje);
+
 
     }
 

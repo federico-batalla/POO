@@ -27,6 +27,9 @@ var CuentaAhorro = /** @class */ (function (_super) {
     CuentaAhorro.prototype.getPorcentajeInteres = function () {
         return this.porcentajeInteres;
     };
+    CuentaAhorro.prototype.setPorcentajeInteres = function (porcentaje) {
+        this.porcentajeInteres = porcentaje;
+    };
     CuentaAhorro.prototype.retiro = function (monto) {
         var aux = 0;
         aux = this.getSaldo() - monto;
@@ -41,12 +44,13 @@ var CuentaAhorro = /** @class */ (function (_super) {
             return "Exede el monto maximo de retiro";
         }
     };
-    CuentaAhorro.prototype.actualizarSaldo = function () {
+    CuentaAhorro.prototype.actualizarSaldo = function (porcentaje) {
         var aux = 0;
         var interes = 0;
-        interes = (this.getSaldo() * this.getPorcentajeInteres()) / 100;
+        interes = (this.getSaldo() * porcentaje) / 100;
         aux = this.getSaldo() + interes;
         this.setSaldo(aux);
+        this.setPorcentajeInteres(porcentaje);
     };
     CuentaAhorro.prototype.toString = function () {
         return "Cuenta Ahorro" + "\n" +
