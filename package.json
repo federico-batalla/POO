@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/federico-batalla/POO/issues"
   },
-  "homepage": "https://github.com/federico-batalla/POO#readme"
+  "homepage": "https://github.com/federico-batalla/POO#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.7"
+  }
 }

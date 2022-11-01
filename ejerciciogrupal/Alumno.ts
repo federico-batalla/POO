@@ -5,7 +5,13 @@ export class Alumno{
     private trabajosPracticos:TrabajoPractico[];
     private respuestas:Array <Array<string>>;
 
-    
+    constructor(nombre:string){
+        this.nombre = nombre;
 
+    }
 
+    public realizarTrabajoPractico(trabajosPractico:TrabajoPractico,respuesta:string[]):boolean{
+
+        
+    }
 }

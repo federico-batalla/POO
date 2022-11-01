@@ -29,12 +29,12 @@ export class TrabajoPractico{
     }
 
     public corregirTrabajoPractico(respuestas:string[]):number{
-
+        
         
     }
 
     public estaAprobado(respuestas:string[]):boolean{
-
+        
 
     }
 
